@@ -20,14 +20,19 @@ struct LandmarkRow: View {
             
             Spacer()
             
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            }
+            
         }
     }
 }
 
 #Preview("Turtle Row") {
     Group {
-        LandmarkRow(landmark: landmarks[0])
-        LandmarkRow(landmark: landmarks[1])
+        LandmarkRow(landmark: ModelData().landmarks[0])
+        LandmarkRow(landmark: ModelData().landmarks[1])
     }
 
 }
